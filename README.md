@@ -15,8 +15,9 @@ __RAM__ is a place to where the programs are loaded in order to be executed.
 </p>
 
 As you can see, we have some types of registers inside the CPU.  
-Why do we have these registers?
-* They are much faster than memory, especially because they are located inside the CPU. Accessing a memory location requires the use of a system bus, so it takes much longer. Accessing data in a register usually takes no time. Therefore, you should try to keep variables in the registers. register sets are very small and most registers have special purposes which limit their use as variables, but they are still an excellent place to store temporary data of calculations.
+
+__Why do we have these registers?__
+* They are much faster than memory, especially because they are located inside the CPU. Accessing a memory location requires the use of a system bus, so it takes much longer. Accessing data in a register usually takes no time. Therefore, you should try to keep variables in the registers. register sets are very small and most registers have special purposes which limit their use as variables, but they are still an excellent place to store temporary data of calculations. Additionally, we can use them to address memory.
 
 ### General Purpose Registers
 The 8086 CPU has 8 general-purpose registers, each 16 bits in size. Each register has its own name:
@@ -53,8 +54,24 @@ Therefore, when you modify any of the 8 bit registers 16 bit register is also up
 
 * __ES__ - Extra segment register, it's up to a coder to define its usage.
 
+ Although it is possible to store any data in the segment registers, this is never a good idea. The segment registers have a very special purpose - __pointing at accessible blocks of memory__. Segment registers work together with general purpose register to access any memory value.
+
+### Special Purpose Registers
+* __IP__ - The instruction pointer register points to currently executing instruction.
+
+* __Flags register__ - Determines the current state of the microprocessor. Flags register is modified automatically by CPU after mathematical operations, this allows to determine the type of the result, and to determine conditions to transfer control to other parts of the program.
+
+Generally you cannot access these registers directly, the way you can access AX and other general registers, but it is possible to change values of system registers using some tricks that you will learn a little bit later.
 
 
+## Memory Access
+To access memory we can use these four registers: __BX, SI, DI, BP__.
+
+| Left Align | Center Align | Right Align |
+|:-----------|:------------:|------------:|
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+| Row 3, Col 1 | Row 3, Col 2 | Row 3, Col 3 |
 
 
 
