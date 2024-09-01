@@ -17,17 +17,26 @@ __RAM__ is a place to where the programs are loaded in order to be executed.
 As you can see, we have some types of registers inside the CPU.  
 
 __Why do we have these registers?__
+
 * They are much faster than memory, especially because they are located inside the CPU. Accessing a memory location requires the use of a system bus, so it takes much longer. Accessing data in a register usually takes no time. Therefore, you should try to keep variables in the registers. register sets are very small and most registers have special purposes which limit their use as variables, but they are still an excellent place to store temporary data of calculations. Additionally, we can use them to address memory.
 
 ### General Purpose Registers
 The 8086 CPU has 8 general-purpose registers, each 16 bits in size. Each register has its own name:
+
  * __AX__ - The accumulator register (divided into __AH__ / __AL__).
+
  * __BX__ - The base address register (divided into __BH__ / __BL__).
+
  * __CX__ - The count register (divided into __CH__ / __CL__).
+
  * __DX__ - The data register (Devided into __DH__ / __DL__).
+
  * __SI__ - The source index register.
+
  * __DI__ - The destination index register.
+
  * __BP__ - The base pointer register.
+
  * __SP__ - The stack pointer register.
 
 4 general purpose registers (AX, BX, CX, DX) are made of two separate 8 bit registers, for example if AX = <span style="color: red;">00110000</span><span style="color: blue;">00111001</span>b, then AH = <span style="color: red;">00110000</span>b and AL = <span style="color: blue;">00111001</span>b.  
@@ -67,11 +76,7 @@ Generally you cannot access these registers directly, the way you can access AX 
 ## Memory Access
 To access memory we can use these four registers: __BX, SI, DI, BP__.
 
-| Left Align | Center Align | Right Align |
-|:-----------|:------------:|------------:|
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
-| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
-| Row 3, Col 1 | Row 3, Col 2 | Row 3, Col 3 |
+
 
 
 
