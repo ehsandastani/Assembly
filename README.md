@@ -29,7 +29,10 @@ The 8086 CPU has 8 general-purpose registers, each 16 bits in size. Each registe
  * __BP__ - The base pointer register.
  * __SP__ - The stack pointer register.
 
+4 general purpose registers (AX, BX, CX, DX) are made of two separate 8 bit registers, for example if AX = <span style="color: red;">00110000</span><span style="color: blue;">00111001</span>b, then AH = <span style="color: red;">00110000</span>b and AL = <span style="color: blue;">00111001</span>b.  
+Therefore, when you modify any of the 8 bit registers 16 bit register is also updated, and vice-versa. the same is for other 3 registers, "H" is for high and "L" is for low part.
 
+### Segment Registers
 
 
 
